@@ -1,0 +1,50 @@
+ <!-- Content Header (Page header) -->
+ <section class="content-header">
+    <h1>
+     Users
+    </h1>
+   
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+
+
+<p>
+<a href="/users/create" class="btn btn-success">Add New</a>
+</p>
+<table class="table table-bordered">
+
+<thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Role</th>
+        <th>Address</th>
+        <th>Action</th>
+    </tr>
+</thead>
+
+<tbody>
+    <% for(var i = 0; i < users.length; i++){ %>            
+        <tr>
+            <td><%= users[i].id %></td>
+            <td><%= users[i].name %></td>
+            <td><%= users[i].email %></td>
+            <td><%= users[i].phone %></td>
+            <td><%= users[i].role %></td>
+            <td><%= users[i].address %></td>
+            <td>
+                <a href="/users/<%= users[i].id %>/edit" class="btn btn-info btn-sm">Edit</a>
+                <a href="/users/<%= users[i].id %>/delete" onclick="return confirm('Are you sure to delete ?');" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+    <% } %>
+</tbody>
+
+</table>
+    
+</section>
+</section>

@@ -1,0 +1,47 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+        <h1>
+         News
+        </h1>
+       
+      </section>
+    
+      <!-- Main content -->
+      <section class="content">
+    
+    
+    <p>
+    <a href="/news/create" class="btn btn-success">Add New</a>
+    </p>
+    <table class="table table-bordered">
+    
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Thumbnail</th>
+            <th>Type</th>
+            <th>Author</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <% for(var i = 0; i < news.length; i++){ %>            
+            <tr>
+                <td><%= news[i].id %></td>
+                <td><%= news[i].title %></td>
+                <td><img src="/uploads/news/<%= news[i].thumbnail %>"></td>
+                <td><%= types[news[i].type] %></td>
+                <td>
+                    <a href="/news/<%= news[i].id %>/edit" class="btn btn-info btn-sm">Edit</a>
+                    <a href="/news/<%= news[i].id %>/delete" onclick="return confirm('Are you sure to delete ?');" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        <% } %>
+    </tbody>
+    
+    </table>
+        
+    </section>
+    </section>

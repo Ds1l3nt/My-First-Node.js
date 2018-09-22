@@ -1,0 +1,51 @@
+
+ <!-- Content Header (Page header) -->
+ <section class="content-header">
+    <h1>
+     products
+    </h1>
+   
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+
+
+<p>
+<a href="/products/create" class="btn btn-success">Add New</a>
+</p>
+<table class="table table-bordered">
+
+<thead>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Thumbnail</th>
+        <th>Category</th>
+        <th>Brand</th>
+        <th>Price</th>        
+        <th>Action</th>
+    </tr>
+</thead>
+
+<tbody>
+    <% for(var i = 0; i < products.length; i++){ %>            
+        <tr>
+            <td><%= products[i].id %></td>
+            <td><%= products[i].title %></td>
+            <td><img src="/uploads/products/<%= products[i].thumbnail %>" width="100px"></td> 
+            <td><%= products[i].Category.title %></td>
+            <td><%= products[i].Brand.name %></td>
+            <td><%= products[i].price %></td>           
+            <td>
+                <a href="/products/<%= products[i].id %>/edit" class="btn btn-info btn-sm">Edit</a>
+                <a href="/products/<%= products[i].id %>/delete" onclick="return confirm('Are you sure to delete ?');" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+    <% } %>
+</tbody>
+
+</table>
+    
+</section>
+</section>
